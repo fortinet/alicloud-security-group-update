@@ -1,10 +1,13 @@
 # Introduction
-This AliCloud Function works with a Fortigate Automation Action to change the security group of a requested ECS instance to one specified in an environment variable. This function uses Node.js 8 and works by first describing and filtering the instances in the specified Region by IP address, and then attaching the pre-defined Security Group to that instance.
+This AliCloud function works with a FortiGate Automation Action to change the security group of a requested ECS instance to one specified in an environment variable. This function uses Node.js 8 and works by first describing and filtering the instances in the specified Region by IP address, and then attaching the pre-defined Security Group to that instance.
+
+# Requirements
+This function requires:
+* FortiOS 6.2 or higher
+* A RAM user with an AccessKey and Secret. For details on creating a RAM user, refer to the AliCloud article [Create a RAM user](https://www.alibabacloud.com/help/doc-detail/28637.htm?spm=a2c63.p38356.b99.13.378647c9NkDOum).
+* Node.js 8
 
 # Set up the AliCloud function
-
-This function requires a RAM user to be setup with an AccessKey and Secret. For details on creating a RAM user, refer to the AliCloud article [Create a RAM user](https://www.alibabacloud.com/help/doc-detail/28637.htm?spm=a2c63.p38356.b99.13.378647c9NkDOum).
-
   1. In the Ali Console, under **Elastic Computing**, select **Function Compute**.
   2. Select a region (top left). It is recommended that you set up the service in the same region as your ECS instances.
   3. Click **Create Service**.
@@ -28,7 +31,6 @@ This function requires a RAM user to be setup with an AccessKey and Secret. For 
 The link to your HTTP Trigger will be displayed below the editor. You will use this in the next section.
 
 # Set up the FortiGate
-
   1. Log into your FortiGate.
   2. Select **Security Fabric > Automation**.
   3. Click **Create New**.
